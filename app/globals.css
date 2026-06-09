@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --lightHover: #f0f4f8;
+  --darkHover: #2a004a;
+  --darkTheme: #0b1220;
+}
+
+@theme inline {
+
+  --color-lightHover: var(--lightHover);
+  --color-darkHover: var(--darkHover);
+  --color-darkTheme: var(--darkTheme);
+
+  --font-outfit: "Outfit", sans-serif;
+  --font-ovo: "Ovo", serif;
+
+  --shadow-black: 4px 4px 0 #000;
+  --shadow-white: 4px 4px 0 #fff;
+
+
+  --animate-float1: float1 25s ease-in-out infinite;
+  --animate-float2: float2 30s ease-in-out infinite;
+  --animate-float3: float3 28s ease-in-out infinite;
+  --animate-float4: float4 35s ease-in-out infinite;
+
+}
+
+
+/* slow space movement */
+
+@keyframes float1 {
+
+  0% {
+    transform: translate(0,0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(40px,-40px) rotate(10deg);
+  }
+
+  100% {
+    transform: translate(0,0) rotate(0deg);
+  }
+
+}
+
+
+@keyframes float2 {
+
+  0% {
+    transform: translate(0,0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(-50px,50px) rotate(-15deg);
+  }
+
+  100% {
+    transform: translate(0,0) rotate(0deg);
+  }
+
+}
+
+
+
+@keyframes float3 {
+
+  0% {
+    transform: translate(0,0);
+  }
+
+  50% {
+    transform: translate(50px,30px);
+  }
+
+  100% {
+    transform: translate(0,0);
+  }
+
+}
+
+
+@keyframes float4 {
+
+  0% {
+    transform: translate(0,0);
+  }
+
+  50% {
+    transform: translate(-40px,-30px);
+  }
+
+  100% {
+    transform: translate(0,0);
+  }
+
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* screenshot background */
+  background :#f0f4f8;
+
+  color:white;
+}
+
+
+.dark body {
+  background:#0b1220;
+  color:white;
+}
+
+
+
+
+
+
+/*@import "tailwindcss";
+
+:root {
+  --lightHover: #fcf4ff;
+  --darkHover: #2a004a;
+  --darkTheme: #11001F;
+  
+
+}
+
+
+
+
+@theme inline {
+  --color-lightHover: var(--lightHover);
+  --color-darkHover: var(--darkHover);
+  --color-darkTheme: var(--darkTheme);
+
+  --font-outfit: "Outfit", sans-serif;
+  --font-ovo: "Ovo", serif;
+
+  --shadow-black: 4px 4px 0 #000;
+  --shadow-white: 4px 4px 0 #fff;
+
+  
+
+   /*--grid-cols-auto: repeat(auto-fit, minmax(220px, 1fr)); */
+
+/*}
+
+
+
+
+body {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  
+}*/
