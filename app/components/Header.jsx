@@ -2,7 +2,7 @@ import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 
-import { motion } from 'motion/react'
+import { motion } from 'motion/react' 
 
 const Header = ({isDarkMode}) => {
     return (
@@ -25,8 +25,8 @@ const Header = ({isDarkMode}) => {
 
             </div>
             <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
-                <a href="#contact" className={`${isDarkMode ? 'text-gray-200  border-gray-400/50' :  'bg-black text-gray-100 border-black'} px-8 py-3 border hover:text-blue-600 rounded-full  flex   items-center gap-2 font-ovo text-lg`}>Contact me  <Image className={`${isDarkMode ? "hover:text-blue-300" : ""} w-4`} src={assets.right_arrow_white} alt=''  /></a>
-                <a href="/sample-resume.pdf" download className={` ${isDarkMode ? 'text-gray-700 border-gray-50  bg-gray-50' : 'border-gray-400/70 text-gray-900'} hover:text-blue-600 px-8 py-3 border rounded-full  flex items-center gap-2 font-ovo text-lg `}>My Resume  <Image src={assets.download_icon} alt='' className='w-4' /></a>
+                <motion.a initial={{y:30 , opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.6, delay : 0.8}} href="#contact" className={`${isDarkMode ? 'text-gray-200  border-gray-400/50' :  'bg-black text-gray-100 border-black'} px-8 py-3 border hover:text-blue-600 rounded-full  flex   items-center gap-2 font-ovo text-lg`}>Contact me  <Image className={`${isDarkMode ? "hover:text-blue-300" : ""} w-4`} src={assets.right_arrow_white} alt=''  /></motion.a>
+                <motion.a initial={{y:30 , opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.6, delay : 1}} href="/sample-resume.pdf" download className={` ${isDarkMode ? 'text-gray-700 border-gray-50  bg-gray-50' : 'border-gray-400/70 text-gray-900'} hover:text-blue-600 px-8 py-3 border rounded-full  flex items-center gap-2 font-ovo text-lg `}>My Resume  <Image src={assets.download_icon} alt='' className='w-4' /></motion.a>
             </div>
 
 
