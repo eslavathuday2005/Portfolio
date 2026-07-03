@@ -1,6 +1,7 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import Providers from "./providers";
 
 const outfit = Outfit({
   subsets: ["latin"], weight: ["400", "500", "600", "700"],
@@ -17,13 +18,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className=" scroll-smooth">
-      <body className={`${outfit.variable} ${ovo.variable} antialiased leading-8 dark:bg-darkTheme dark:text-white `}><Toaster position="top-right"
-        containerStyle={{
-          top: "80px",   // adjust based on navbar height
-          right: "20px"
-        }}
+<html
+  lang="en"
+  suppressHydrationWarning
+  className="scroll-smooth"
+>
+  <body
+    className={`${outfit.variable} ${ovo.variable} antialiased leading-8 dark:bg-darkTheme dark:text-white`}
+  >
+    <Providers>
 
+      <Toaster
+        position="top-right"
+        containerStyle={{ top: "80px", right: "20px" }}
         toastOptions={{
           className: "animate-[slideInRight_0.4s_ease]",
           style: {
@@ -32,8 +39,13 @@ export default function RootLayout({ children }) {
             borderRadius: "10px",
             padding: "12px 16px",
           },
+        }}
+      />
 
-        }} />{children}</body>
-    </html>
+      {children}
+
+    </Providers>
+  </body>
+</html>
   );
 }

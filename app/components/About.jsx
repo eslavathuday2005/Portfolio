@@ -48,7 +48,7 @@ const About = ({isDarkMode}) => {
 
                                     <p className='font-ovo'>I actively solve DSA problems and continuously improve my understanding of systems and scalable application design.</p>
 
-                                    <p className={`font-semibold font-ovo ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>Built multiple end-to-end applications focusing on scalability and real-world use cases.</p>
+                                    <p className={`text-[17px] font-ovo ${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>Built multiple end-to-end applications focusing on scalability and real-world use cases.</p>
 
                                 </div>
 

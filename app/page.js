@@ -11,39 +11,25 @@ import Services from "./components/Services";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
 import SectionAnimation from "./components/SectionAnimation";
+import { useTheme } from "next-themes";
+
 
 export default function Home() {
 
+const { resolvedTheme } = useTheme();
 
-  const [isDarkMode, setisDarkMode] = useState(false);
+const [mounted, setMounted] = useState(false);
 
+useEffect(() => {
+  setMounted(true);
+}, []);
 
-  useEffect(() => {
-    if (localStorage.theme === "dark" || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme : dark)').matches)) {
-      setisDarkMode(true)
-    } else {
-      setisDarkMode(false)
-    }
-  }, [])
+if (!mounted) return null;
 
-
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.theme = 'dark';
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.theme = '';
-    }
-
-  }, [isDarkMode])
-
-
+const isDarkMode = resolvedTheme === "dark";
 
   return (
     <>
-
 
 <div className={ `fixed inset-0 -z-10 overflow-hidden pointer-events-none ${isDarkMode ? ' dark:bg-darkTheme' : 'bg-lightHover'} `}>
 
@@ -124,10 +110,7 @@ export default function Home() {
 
 
 
-    <Navbar 
-      isDarkMode={isDarkMode} 
-      setisDarkMode={setisDarkMode} 
-    />
+<Navbar />
 
     
 <SectionAnimation header>
